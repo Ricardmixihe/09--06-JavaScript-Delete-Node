@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>段落</p>
+        <h1>标题</h1>
+        <input type="text">
+    </div>
+    <script>
+        // 删除节点：将标签从html结构中删除 
+        // 语法：父元素，removeChild(要被移除的标签对象)；
+        let div = document.querySelector('div');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
+        let p = div.children[0];
+        div.removeChild(p)
+    </script>
+</body>
+</html>
