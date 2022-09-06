@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        // 移动端事件 
+        // touchstart :手指按下去
+        // touchend   :
+        // touchmove  :
+        let div = document.querySelector('div');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
+        div. addEventListener('touchstart',function (e) {
+            console.log(e);
+            console.log('手指按下');
+        })//绑定事件
+        div. addEventListener('touchend',function () {
+            console.log('手指离开');
+        })//绑定事件
+        div. addEventListener('touchmove',function () {
+            console.log('手指移动');
+        })//绑定事件
+
+
+        // 移动端事件中是否有事件对象参数？必须有
+        // 作用：用来记录与手指相关的一些信息（手指的个数，手指点击的坐标）
+        // 事件对象参数，touches.length ===> 获取手指个数
+        // 事件对象参数.touches ===>是一个伪数组，伪数组中保存的每一个值就是一个手指对象
+        // 事件对象参数.toches[索引].clientX事件对象参数.toches[索引].clientY
+        // 事件对象参数.target ===〉 获取用户点击的标签对象
+    </script>
+</body>
+</html>
