@@ -75,7 +75,7 @@
         let salary = document.querySelector('.salary');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
         let city = document.querySelector('.city');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
         let tbody = document.querySelector('tbody');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
-        let student = [];
+        let students = [];
 
         
         // 2.点击按钮想数组中新增学生信息
@@ -84,7 +84,7 @@
             e.preventDefault();
 
             // 准备一个学生对象
-            let students = {
+            let student = {
                 sname : uname.value,
                 stu_age : age.value,
                 stu_gender : gender.value,
@@ -92,14 +92,33 @@
                 stu_city : city.value
             }
             //向数组中增加值
-            student.push(students);
-            console.log(student);
-        }
+            students.push(student);
+            loadDate(students);
+            }
+
 
         //3.封装函数实现根据数据创建标签
-        function loadDate(params) {
-            
+        function loadDate(ary) {
+            // 1.根据传递过来的数据，在页面创建元素
+            for (let i = 0; i < ary.length; i++) {
+                // 2.创建标签
+                let tr = document.createElement('tr');
+                    tr.innerHTML =`
+                        <td>001</td>
+                        <td>${ary[i].sname}</td>
+                        <td>${ary[i].stu_age}</td>
+                        <td>${ary[i].stu_gender}</td>
+                        <td>${ary[i].stu_salary}</td>
+                        <td>${ary[i].stu_city}</td>
+                        <td>
+                            <a herf = 'JavaScript:;'>删除</a>    
+                        </td>
+                    `
+                // 3.将创建好的标签追加到父元素容器
+                tbody.appendChild(tr);
+            }
         }
+
 
  
   </script>
