@@ -77,6 +77,24 @@
         let tbody = document.querySelector('tbody');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
         let student = [];
 
+        
+        // 2.点击按钮想数组中新增学生信息
+        btn.onclick = function (e) {
+            //阻止标签默认行为
+            e.preventDefault();
+
+            // 准备一个学生对象
+            let student = {
+                sname : uname.value,
+                stu_age : age.value,
+                stu_gender : gender.value,
+                stu_salary : salary.value,
+                stu_city : city.value
+                
+            }
+            //向数组中增加值
+            student.push(student)
+        }
 
  
   </script>
