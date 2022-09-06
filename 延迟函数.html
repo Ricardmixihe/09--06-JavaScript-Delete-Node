@@ -5,8 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        div{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
+    <div>
+        <img src="./1421662448103_.pic.jpg" alt="">
+    </div>
     <script>
 
         //1.延迟函数
@@ -20,6 +30,13 @@
         // 应用场景
         // 页面中广告隔一段时间自动消失
         // 程序中提示信息框自动消失
+        let img = document.querySelector('img');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
+        let div = document.querySelector('div');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
+        setTimeout(function () {
+            // img.style.display = 'none';
+            
+            div.innerHTML = `<h1>广告消失啦</h1>`
+        },3000)
     </script>
 </body>
 </html>
