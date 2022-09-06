@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 相同点：
+            // 延迟函数：
+            // 定时器
+            // 1。都得设置时间时间单位都是毫秒
+            // 2.代码趣会息动执行 
+            // 3.都是window对象中的一个方法
+            // 4.this指向window
+            // 5.window顶级对象可以省略
+        // 不同点
+            // 延迟函数：一次
+            // 定时器：无数次
+
+            // 定时器可以通过 clearInterval()停止定时器
+            // 延迟函数可以 clearTimeout(id)停止延迟函数
+        let timeId = setTimeout(function () {
+            console.log(123);
+        },1000)
+        clearTimeout(timeId)
+    </script>
+</body>
+</html>
