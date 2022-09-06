@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        支付成功
+        <p>10</p>
+        秒之后跳转首页
+    </div>
+    <script>
+        let a = document.querySelector('p');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
+        let t = 9;
+        let timer = setInterval(function () {
+            a.innerHTML = t;
+            t--;
+            if (t<0) {
+                clearTimeout(timer)
+                
+            }
+        },1000)
+        let timeID = setTimeout(function () {
+            location.href = 'https://www.baidu.com'
+        },10000)
+
+    </script>
+</body>
+</html>
