@@ -76,6 +76,7 @@
         let city = document.querySelector('.city');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
         let tbody = document.querySelector('tbody');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
         let students = [];
+        let stuNum = 20220910;
 
         
         // 2.点击按钮想数组中新增学生信息
@@ -85,6 +86,7 @@
 
             // 准备一个学生对象
             let student = {
+                stuID : stuNum++,
                 sname : uname.value,
                 stu_age : age.value,
                 stu_gender : gender.value,
@@ -99,12 +101,14 @@
 
         //3.封装函数实现根据数据创建标签
         function loadDate(ary) {
+            // !!先清空tbady标签的内容
+            tbody.innerHTML = ''
             // 1.根据传递过来的数据，在页面创建元素
             for (let i = 0; i < ary.length; i++) {
                 // 2.创建标签
                 let tr = document.createElement('tr');
                     tr.innerHTML =`
-                        <td>001</td>
+                        <td>${ary[i].stuID}</td>
                         <td>${ary[i].sname}</td>
                         <td>${ary[i].stu_age}</td>
                         <td>${ary[i].stu_gender}</td>
@@ -119,7 +123,8 @@
             }
         }
 
-
+        // 4.删除功能：删除标签 委托 
+        // 如果页面中元素是动态创建的且还要注册事件，则推荐使用委托
  
   </script>
 </body>
