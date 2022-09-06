@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 1.本地存储保存数据的时候，键是否可以相同
+            //保存数据的时候，键不能相同，否则会被覆盖掉
+            // localStorage.setItem('uname','老段')
+            // localStorage.setItem('uname','老段1')    
+        // 2.如果需要同时保存多个数据，则可以将数据先放到数组中，然后将数组保存到本地
+            // let ary = ['老段','老段1','老段2']
+            // localStorage.setItem('uname',ary)
+        // localStorage.removeItem('uname')
+        // 3.能否保存数组格式的对象呢？（数组中保存对象）
+            // a)本地存储可以保存数组格式的对象
+            // b)但是不推荐直接保存，因为保存的结果无法正确认识
+            // c)存数据 数组格式的数据通过JSON.stringify()转换一下(将数组对象转换为字串)
+            //d)因为通过sON.stringify()将数据转换为字符串保存的,所以最后得到的结果也是一个字符串
+            // e)因为直接操作字符串没有直接操作对象方便，所以js提供了一个方法将字符串转换为对象
+            // JSON.parse
+        let ary = [
+            {uname: '老段22'},
+            {uname: '老段1'},
+            {uname: '老段2'},
+        ]
+        // 保存操作：推荐使用JSON.stringify()先转字符串
+        localStorage.setItem('uname',JSON.stringify(ary));
+        
+        //获取本地存储数据中的值的时候，推荐使用JSON.parse,将字符串转换为对象
+        let res = JSON.parse(localStorage.getItem('uname')); 
+        console.log(res[0].uname);
+
+    </script>
+</body>
+</html>
