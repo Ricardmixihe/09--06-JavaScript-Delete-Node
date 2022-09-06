@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //本地存储区别 
+        // 1.相同点：都是可以保存数据 
+        // localStorage.setItem('键'，值) 
+        // localStorage.getItem('键')；
+        // localStorage.removeItem('键')
+
+        // sessionStorage,setItem('键'，值） 
+        // sessionStorage.getItem('键') 
+        // sessionStorage.removeItem('键')；
+
+        let ary = [{uname:'zx'}];
+        sessionStorage.setItem('mytest',JSON.stringify(ary))
+        console.log( JSON.parse(sessionStorage.getItem('mytest')));
+
+
+        // 2.不同点：
+        // a)localStronage 保存的数据属于持久化保存（数据只有手动删除才能消失）sessionStorage保存的数据属于临时保存（关闭就消失）
+        // b)localStorage保存的数据可以实现跨页面访问 sessionStorage保存的数据只能在当前页面中访问
+
+    </script>
+</body>
+</html>
