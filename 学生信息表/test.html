@@ -115,7 +115,7 @@
                         <td>${ary[i].stu_salary}</td>
                         <td>${ary[i].stu_city}</td>
                         <td>
-                            <a herf = 'JavaScript:;'>删除</a>    
+                            <a herf = 'JavaScript:; data-myid ="${i}"'>删除</a>    
                         </td>
                     `
                 // 3.将创建好的标签追加到父元素容器
@@ -130,10 +130,13 @@
             let btn = e.target;
             // 6.对事件源进行判断
             if (btn.tagName == 'A') {
-                let tr = btn.parentNode.parentNode;
-                // 将tr标签删除
-                tbody.removeChild(tr)
-                
+                // 将数组中的数据删除
+                // student.splice(索引,1)
+              let index = btn.dataest.myid;
+              students.splice(index,1)
+              loadData(students)
+
+
             }
             
         })
