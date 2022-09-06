@@ -125,7 +125,18 @@
 
         // 4.删除功能：删除标签 委托 
         // 如果页面中元素是动态创建的且还要注册事件，则推荐使用委托
- 
+        tbody.addEventListener('click',function(e){
+            // 5.得到真正的事件源
+            let btn = e.target;
+            // 6.对事件源进行判断
+            if (btn.tagName == 'A') {
+                let tr = btn.parentNode.parentNode;
+                // 将tr标签删除
+                tbody.removeChild(tr)
+                
+            }
+            
+        })
   </script>
 </body>
 </html>
