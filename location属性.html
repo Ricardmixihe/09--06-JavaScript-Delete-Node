@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <input type="button" value="按钮">
     <script>
         // location,属性： 
         // 1)locatisn属性是windowJ顶级对象的一个属性 
@@ -16,8 +17,20 @@
             // b)location.reload()
 
         // a)location.herf
+        //作用：可以获取页面中的地址（网址）设置跳转页面的地址
+            console.log( location.href);
+        let btn = document.querySelector('input');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
+        btn. addEventListener('click',function () {
+            location.href = 'https://www.baidu.com'
+        })//绑定事件
 
 
+
+        // b)location.reload(布尔值)； 
+        // 作用：从新加载页面 ---> 对应的就是浏览器中的刷新页面功能 
+        // 注意：刷新页面的时候， 
+        // 布尔值如果是false,代表从计算机本地缓存中重新获取数据 
+        // 如果布尔值为true,代表计算机要重新向服务端发送请求，重新获取数据
     </script>
 </body>
 </html>
