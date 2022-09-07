@@ -60,8 +60,7 @@
     </tbody>
   </table>
   <script>
-     const data = localStorage.getItem('student-data')
-    console.log(data)
+    
      // 1. 功能1: 用户点击录入按钮,保存学生信息
      // a) 保存多个学生信息  --- 准备一个数组   (数组中保存的就是一个个的学生对象)
      // b) 每一个学生信息  --- 学生对象
@@ -124,7 +123,6 @@
         }
      }
 
-     loadStudent(ary);
      // 3. 功能3: 删除数据 (通过事件委托的方式实现)
      tbody.addEventListener('click', function(e) {
           // 获取事件源
