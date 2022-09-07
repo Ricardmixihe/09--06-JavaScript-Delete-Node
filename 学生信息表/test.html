@@ -67,7 +67,13 @@
      // c) 学生对象有属性: 姓名, 年龄, 性别, 薪资, 城市
      // 总结: 用户输入的每一个值要保存到学生对象中,然后学生对象保存到数组中
      // 代码实现:
-  
+    // const data = localStorage.getItem('student-data')
+    // const arr = data ? JSON.parse(data) : []
+
+     let data = localStorage.getItem('student-data');
+    const ary = data? JSON.parse(data):[]
+    console.log(ary);
+
         let btn = document.querySelector('.add');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
         let uname = document.querySelector('.uname');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
         let age = document.querySelector('.age');//返回文档中匹配指定 CSS选择器的一个元素。!!注意仅仅返回匹配指定选择器的第一个元素
@@ -120,6 +126,8 @@
                     `
                 // 3.将创建好的标签追加到父元素容器
                 tbody.appendChild(tr);
+        localStorage.setItem('student-data', JSON.stringify(ary))
+
             }
         }
 
@@ -135,11 +143,25 @@
               let index = btn.dataest.myid;
               students.splice(index,1)
               loadData(students)
-
-
             }
-            
         })
+
+         // 5. 删除模块
+    tbody.addEventListener('click', function (e) {
+      if (e.target.tagName === 'A') {
+        // alert(1)
+        // console.log(e.target.dataset.id)
+        // 删除数组对应的这个数据
+        arr.splice(e.target.dataset.id, 1)
+        // 写入本地存储
+        localStorage.setItem('student-data', JSON.stringify(ary))
+        // 重新渲染
+        render()
+      }
+    })
+    // localStorage.setItem('uname',JSON.stringify(ary))
+    // console.log(ary[0]);
+
   </script>
 </body>
 </html>
